@@ -1,0 +1,28 @@
+<h1 [innerText]="title"></h1>
+<br>
+  <table class="table table-hover table-striped" *ngIf="stockValues && stockValues.length>0;else loading; ">
+  <thead>
+  <tr>
+    <th>Apple Stock Value</th>
+    <th>Google Stock Value</th>
+    <th>Microsoft Stock Value</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <h4 [innerText]="stockValues[0]"></h4>
+    </td>
+    <td>
+      <h4 [innerText]="stockValues[1]"></h4>
+    </td>
+    <td>
+      <h4 [innerText]="stockValues[2]"></h4>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #loading>
+  <h4>Stocks are getting loaded!</h4>
+</ng-template>
